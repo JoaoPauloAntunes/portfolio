@@ -52,6 +52,8 @@ export const ui = {
   },
   projectsPersonal: { pt: "Pessoais", en: "Personal" },
   code: { pt: "Código", en: "Code" },
+  privateCode: { pt: "Código privado", en: "Private code" },
+  featured: { pt: "Destaque", en: "Featured" },
   live: { pt: "Ver online", en: "Live" },
   educationTitle: { pt: "Formação", en: "Education" },
   done: { pt: "Concluído", en: "Completed" },
@@ -188,7 +190,7 @@ export const experience: { role: T; org: string; period: T; points: T[] }[] = [
   },
 ];
 
-export type Project = { title: T; text: T; tech: string[]; code?: string; live?: string };
+export type Project = { title: T; text: T; tech: string[]; code?: string; live?: string; featured?: boolean };
 
 export const workProjects: Project[] = [
   {
@@ -227,6 +229,47 @@ export const workProjects: Project[] = [
 
 export const personalProjects: Project[] = [
   {
+    featured: true,
+    title: { pt: "App de promotor de eventos", en: "Event promoter app" },
+    text: {
+      pt: "App instalável no celular (PWA) para promotores registrarem o dia de trabalho em segundos. Funciona sem internet e sincroniza depois, entra com a conta Google, gera PDF para compartilhar, preenche o formulário a partir de uma foto usando IA, lembra dos retornos por notificação e monta a planilha do gestor automaticamente. Em uso real.",
+      en: "Installable mobile app (PWA) for event promoters to log their workday in seconds. Works offline and syncs later, signs in with Google, exports shareable PDFs, fills the form from a photo using AI, sends follow-up reminders as push notifications and builds the manager's spreadsheet automatically. In real use.",
+    },
+    tech: ["PWA", "TypeScript", "Serverless (Vercel)", "PostgreSQL", "Google OAuth", "Claude API", "Web Push", "Google Sheets"],
+  },
+  {
+    title: { pt: "Transmissão de tela sem fio", en: "Wireless screen casting" },
+    text: {
+      pt: "Envia a tela do computador para um celular ou navegador, na mesma rede ou pela internet. O celular conecta lendo um QR code.",
+      en: "Casts a computer screen to a phone or browser, on the same network or over the internet. Phones pair by scanning a QR code.",
+    },
+    tech: ["Node.js", "WebRTC", "WebSocket", "Cloudflare Workers", "PWA"],
+  },
+  {
+    title: { pt: "App de corrida", en: "Running app" },
+    text: {
+      pt: "Aplicação web para corredores, com mapas e login Google, e uma API própria com banco relacional e migrações.",
+      en: "Web app for runners with maps and Google sign-in, backed by its own API with a relational database and migrations.",
+    },
+    tech: ["React", "TypeScript", "Mantine", "Leaflet", "FastAPI", "SQLModel", "PostgreSQL"],
+  },
+  {
+    title: { pt: "Bot de finanças no Telegram", en: "Personal finance Telegram bot" },
+    text: {
+      pt: "Registra gastos por uma conversa guiada no Telegram e guarda tudo num banco na nuvem, sem custo por mensagem.",
+      en: "Logs expenses through a guided Telegram conversation and stores them in a cloud database, at no cost per message.",
+    },
+    tech: ["Node.js", "Serverless (Vercel)", "PostgreSQL", "Telegram Bot API"],
+  },
+  {
+    title: { pt: "Site institucional (freelance)", en: "Business website (freelance)" },
+    text: {
+      pt: "Site responsivo para uma profissional da saúde, publicado com deploy automático.",
+      en: "Responsive website for a healthcare professional, with automatic deployment.",
+    },
+    tech: ["Next.js", "Mantine", "Tailwind CSS", "GitHub Actions"],
+  },
+  {
     title: { pt: "Oh My Map", en: "Oh My Map" },
     text: {
       pt: "Mapa web com desenho de áreas, busca de endereços, cálculo de rotas e camadas por período.",
@@ -235,15 +278,6 @@ export const personalProjects: Project[] = [
     tech: ["Next.js", "React", "Leaflet", "Vercel"],
     code: "https://github.com/JoaoPauloAntunes/oh-my-map",
     live: "https://oh-my-map.vercel.app/",
-  },
-  {
-    title: { pt: "Seleção de área no mapa", en: "Map area selection" },
-    text: {
-      pt: "Controle para selecionar uma área no mapa e obter o retângulo de coordenadas.",
-      en: "Control to select an area on a map and get its bounding box.",
-    },
-    tech: ["React", "Leaflet"],
-    code: "https://github.com/JoaoPauloAntunes/react-leaflet-area-select",
   },
   {
     title: { pt: "Display TFT com MicroPython", en: "TFT display with MicroPython" },

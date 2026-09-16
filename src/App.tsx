@@ -13,6 +13,7 @@ import {
   Languages,
   Laptop,
   Linkedin,
+  Lock,
   Mail,
   MapPin,
   Menu,
@@ -106,25 +107,32 @@ function Chips({ items }: { items: string[] }) {
 
 function ProjectCard({ p, lang, index }: { p: Project; lang: Lang; index: number }) {
   return (
-    <Reveal delay={index * 80}>
-      <article className="card flex h-full flex-col">
-        <h4 className="mb-2 text-lg font-bold">{p.title[lang]}</h4>
-        <p className="mb-4 flex-1 text-sm leading-relaxed text-muted">{p.text[lang]}</p>
-        <Chips items={p.tech} />
-        {(p.code || p.live) && (
-          <div className="mt-5 flex gap-3">
-            {p.code && (
-              <a className="btn-ghost !px-4 !py-1.5" href={p.code} target="_blank" rel="noopener noreferrer">
-                <Github size={16} /> {ui.code[lang]}
-              </a>
-            )}
-            {p.live && (
-              <a className="btn-ghost !px-4 !py-1.5" href={p.live} target="_blank" rel="noopener noreferrer">
-                <ExternalLink size={16} /> {ui.live[lang]}
-              </a>
-            )}
-          </div>
+    <Reveal delay={index * 80} className={p.featured ? "md:col-span-2" : ""}>
+      <article className={`card relative flex h-full flex-col ${p.featured ? "border-brand/50 bg-gradient-to-br from-brand/10 to-panel" : ""}`}>
+        {p.featured && (
+          <span className="absolute -top-3 left-6 rounded-full bg-gradient-to-r from-brand to-accent px-3 py-1 text-xs font-bold text-ink">
+            ★ {ui.featured[lang]}
+          </span>
         )}
+        <h4 className={`mb-2 font-bold ${p.featured ? "text-2xl" : "text-lg"}`}>{p.title[lang]}</h4>
+        <p className={`mb-4 flex-1 leading-relaxed text-muted ${p.featured ? "text-base" : "text-sm"}`}>{p.text[lang]}</p>
+        <Chips items={p.tech} />
+        <div className="mt-5 flex flex-wrap gap-3">
+          {p.code ? (
+            <a className="btn-ghost !px-4 !py-1.5" href={p.code} target="_blank" rel="noopener noreferrer">
+              <Github size={16} /> {ui.code[lang]}
+            </a>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 text-xs text-muted">
+              <Lock size={14} /> {ui.privateCode[lang]}
+            </span>
+          )}
+          {p.live && (
+            <a className="btn-ghost !px-4 !py-1.5" href={p.live} target="_blank" rel="noopener noreferrer">
+              <ExternalLink size={16} /> {ui.live[lang]}
+            </a>
+          )}
+        </div>
       </article>
     </Reveal>
   );
