@@ -27,8 +27,8 @@ export const ui = {
   hello: { pt: "Olá, eu sou", en: "Hi, I'm" },
   role: { pt: "Engenheiro de Computação · Desenvolvedor Full Stack", en: "Computer Engineer · Full Stack Developer" },
   about: {
-    pt: "Construo software em nuvem para agricultura de precisão há mais de 6 anos. Trabalho em vários produtos da Zait, de máquinas agrícolas autônomas a relatórios de campo, e cuido de cada funcionalidade de ponta a ponta: dados, API, interface, implantação, monitoramento e custo.",
-    en: "I have been building cloud software for precision agriculture for 6+ years. I work across several of Zait's products, from autonomous farm machines to field reports, and I own each feature end to end: data, API, user interface, deployment, monitoring and cost.",
+    pt: "Há mais de 6 anos transformo dados do campo em software útil. Desenvolvo sistemas em nuvem que coletam, processam e mostram dados de máquinas agrícolas, sensores e mapas, e cuido de cada entrega de ponta a ponta: do banco de dados à tela, da primeira versão à operação em produção.",
+    en: "For 6+ years I have been turning field data into useful software. I build cloud systems that collect, process and display data from farm machines, sensors and maps, and I own each delivery end to end: from database to screen, from first version to production.",
   },
   location: { pt: "São Paulo, Brasil", en: "São Paulo, Brazil" },
   locationLabel: { pt: "Localização", en: "Location" },
@@ -40,15 +40,15 @@ export const ui = {
   talk: { pt: "Vamos conversar", en: "Let's talk" },
   servicesTitle: { pt: "O que eu faço", en: "What I do" },
   servicesSub: {
-    pt: "Do mapa na tela ao servidor na nuvem — e até o firmware da máquina no campo.",
-    en: "From the map on screen to the cloud server — all the way to the firmware on the machine in the field.",
+    pt: "Do mapa na tela ao servidor na nuvem, com os pés no campo.",
+    en: "From the map on screen to the cloud server, with my feet in the field.",
   },
   experienceTitle: { pt: "Experiência", en: "Experience" },
   projectsTitle: { pt: "Projetos", en: "Projects" },
-  projectsWork: { pt: "No trabalho", en: "At work" },
+  projectsWork: { pt: "Problemas que resolvo no trabalho", en: "Problems I solve at work" },
   projectsWorkNote: {
-    pt: "Código proprietário — descrevo o que construí, sem expor o produto.",
-    en: "Proprietary code — I describe what I built without exposing the product.",
+    pt: "Os detalhes são confidenciais; aqui está o tipo de solução que entrego.",
+    en: "The details are confidential; this is the kind of solution I deliver.",
   },
   projectsPersonal: { pt: "Pessoais", en: "Personal" },
   code: { pt: "Código", en: "Code" },
@@ -58,17 +58,17 @@ export const ui = {
   offTitle: { pt: "Fora do código", en: "Off the keyboard" },
   contactTitle: { pt: "Contato", en: "Contact" },
   contactSub: {
-    pt: "Tem uma vaga ou um projeto em mente? Me mande uma mensagem.",
-    en: "Have a role or a project in mind? Send me a message.",
+    pt: "Tem uma vaga remota ou um projeto em mente? Me mande uma mensagem.",
+    en: "Have a remote role or a project in mind? Send me a message.",
   },
   footer: { pt: "Feito com React, Vite e Tailwind CSS.", en: "Built with React, Vite and Tailwind CSS." },
 } satisfies Record<string, T | Record<string, T>>;
 
 export const stats: { value: string | T; label: T }[] = [
   { value: "6+", label: { pt: "anos de experiência", en: "years of experience" } },
-  { value: { pt: "1.000+", en: "1,000+" }, label: { pt: "pull requests aceitos", en: "merged pull requests" } },
-  { value: "13", label: { pt: "firmwares no CI que montei", en: "firmwares on the CI I built" } },
-  { value: "AWS", label: { pt: "sem servidor, de ponta a ponta", en: "serverless, end to end" } },
+  { value: "Full stack", label: { pt: "do banco de dados à tela", en: "from database to screen" } },
+  { value: "AWS", label: { pt: "arquiteturas sem servidor", en: "serverless architectures" } },
+  { value: "GIS", label: { pt: "mapas e dados espaciais", en: "maps and spatial data" } },
 ];
 
 export type IconName = "web" | "cloud" | "map" | "ci" | "iot" | "ai";
@@ -78,8 +78,8 @@ export const services: { icon: IconName; title: T; text: T; tech: string[] }[] =
     icon: "web",
     title: { pt: "Interfaces web", en: "Web interfaces" },
     text: {
-      pt: "Aplicações responsivas com mapas interativos, painéis e telas de operação.",
-      en: "Responsive apps with interactive maps, dashboards and operation screens.",
+      pt: "Aplicações responsivas com mapas interativos, painéis e gráficos que ajudam a decidir.",
+      en: "Responsive apps with interactive maps, dashboards and charts that help people decide.",
     },
     tech: ["Next.js", "React", "TypeScript", "Leaflet", "React Native"],
   },
@@ -87,44 +87,44 @@ export const services: { icon: IconName; title: T; text: T; tech: string[] }[] =
     icon: "cloud",
     title: { pt: "Back end e nuvem", en: "Back end & cloud" },
     text: {
-      pt: "APIs sem servidor na AWS, login e permissões, modelagem de dados e infraestrutura como código.",
-      en: "Serverless APIs on AWS, authentication and permissions, data modelling and infrastructure as code.",
+      pt: "APIs sem servidor, bancos NoSQL, login e controle de acesso, e infraestrutura como código.",
+      en: "Serverless APIs, NoSQL databases, authentication and access control, and infrastructure as code.",
     },
-    tech: ["Python", "FastAPI", "Lambda", "DynamoDB", "Cognito", "S3", "AWS CDK"],
+    tech: ["Python", "FastAPI", "AWS Lambda", "DynamoDB", "Cognito", "S3", "AWS CDK"],
   },
   {
     icon: "map",
-    title: { pt: "Mapas e rotas", en: "Maps & routes" },
+    title: { pt: "Dados espaciais", en: "Spatial data" },
     text: {
-      pt: "Planejamento de rotas de cobertura em talhões, desvio de obstáculos e exportação para GIS.",
-      en: "Coverage path planning for crop fields, obstacle avoidance and GIS export.",
+      pt: "Mapas, planejamento do trabalho em campo, camadas raster e projetos prontos para QGIS e QField.",
+      en: "Maps, field work planning, raster layers and ready-to-use QGIS and QField projects.",
     },
-    tech: ["Fields2Cover", "Shapely", "GeoJSON", "GeoTIFF", "QGIS"],
+    tech: ["GeoJSON", "Shapely", "GeoTIFF", "QGIS", "QField"],
   },
   {
     icon: "ci",
     title: { pt: "CI/CD e DevOps", en: "CI/CD & DevOps" },
     text: {
-      pt: "Servidor próprio que compila e publica firmware, implantação com reversão e redução de custo medida.",
-      en: "Self-hosted server that builds and publishes firmware, deploys with rollback and measured cost cuts.",
+      pt: "Build, testes e implantação automáticos, com monitoramento e custo de nuvem sob controle.",
+      en: "Automated build, test and deploy, with monitoring and cloud cost under control.",
     },
-    tech: ["Docker", "Linux", "systemd", "pytest", "CloudWatch", "Cost Explorer"],
+    tech: ["Docker", "Linux", "pytest", "CloudWatch", "GitHub Actions"],
   },
   {
     icon: "iot",
     title: { pt: "IoT e integrações", en: "IoT & integrations" },
     text: {
-      pt: "Telemetria de máquinas em tempo real, alertas e comandos pelo WhatsApp.",
-      en: "Real-time machine telemetry, alerts and commands over WhatsApp.",
+      pt: "Dados de máquinas e sensores em tempo real, integração com APIs de terceiros e avisos automáticos.",
+      en: "Real-time machine and sensor data, third-party API integrations and automatic notifications.",
     },
-    tech: ["AWS IoT Core", "MQTT", "WhatsApp Cloud API", "ESP-IDF", "PlatformIO"],
+    tech: ["MQTT", "AWS IoT Core", "REST APIs", "Webhooks"],
   },
   {
     icon: "ai",
     title: { pt: "Desenvolvimento com IA", en: "AI-assisted development" },
     text: {
-      pt: "Uso agentes de IA no dia a dia para investigar, programar e revisar com mais velocidade.",
-      en: "I use AI agents daily to investigate, code and review faster.",
+      pt: "Uso agentes de IA no dia a dia para entregar mais rápido, sempre revisando e testando o que sai deles.",
+      en: "I use AI agents daily to ship faster, always reviewing and testing what they produce.",
     },
     tech: ["Claude Code", "ChatGPT"],
   },
@@ -137,24 +137,20 @@ export const experience: { role: T; org: string; period: T; points: T[] }[] = [
     period: { pt: "ago 2022 – hoje", en: "Aug 2022 – present" },
     points: [
       {
-        pt: "Planejamento de rotas para máquinas autônomas, missões com várias máquinas e telemetria ao vivo.",
-        en: "Route planning for autonomous machines, multi-machine missions and live telemetry.",
+        pt: "Sistemas em nuvem para coletar, processar e visualizar dados de máquinas agrícolas, sensores e imagens.",
+        en: "Cloud systems that collect, process and visualise data from farm machines, sensors and imagery.",
       },
       {
-        pt: "Login e permissões por talhão e máquina no Amazon Cognito.",
-        en: "Authentication and per-field, per-machine permissions on Amazon Cognito.",
+        pt: "Mapas, planejamento do trabalho em campo e relatórios gerados automaticamente.",
+        en: "Maps, field work planning and automatically generated reports.",
       },
       {
-        pt: "Alertas de falha e comandos à distância pelo WhatsApp.",
-        en: "Failure alerts and remote commands over WhatsApp.",
+        pt: "APIs e integrações entre sistemas, inclusive de terceiros.",
+        en: "APIs and integrations between systems, including third-party services.",
       },
       {
-        pt: "Servidor de CI que compila e publica o firmware de 13 projetos embarcados.",
-        en: "CI server that builds and publishes firmware for 13 embedded projects.",
-      },
-      {
-        pt: "Relatórios de campo gerados na nuvem e redução de custo na AWS.",
-        en: "Cloud-rendered field reports and AWS cost reduction.",
+        pt: "Controle de acesso, automação de implantação e otimização de custo na nuvem.",
+        en: "Access control, deployment automation and cloud cost optimisation.",
       },
     ],
   },
@@ -168,8 +164,8 @@ export const experience: { role: T; org: string; period: T; points: T[] }[] = [
         en: "Web interfaces with interactive maps in React and Leaflet.",
       },
       {
-        pt: "APIs REST em Python (FastAPI) no AWS Lambda, com DynamoDB e PostgreSQL.",
-        en: "REST APIs in Python (FastAPI) on AWS Lambda, with DynamoDB and PostgreSQL.",
+        pt: "APIs REST em Python (FastAPI) sem servidor na AWS.",
+        en: "Serverless REST APIs in Python (FastAPI) on AWS.",
       },
     ],
   },
@@ -196,36 +192,36 @@ export type Project = { title: T; text: T; tech: string[]; code?: string; live?:
 
 export const workProjects: Project[] = [
   {
-    title: { pt: "Rotas para máquinas autônomas", en: "Routes for autonomous machines" },
+    title: { pt: "Máquinas em tempo real", en: "Machines in real time" },
     text: {
-      pt: "Rotas de cobertura sobre o contorno do talhão, com desvio de obstáculos, linha AB, rotas de amostragem e exportação para QGIS e mapa HTML.",
-      en: "Coverage routes over field boundaries with obstacle avoidance, AB lines, sampling routes and export to QGIS and HTML maps.",
+      pt: "O que a máquina faz no campo chega à tela em segundos, e quem precisa é avisado quando algo sai do esperado.",
+      en: "What a machine does in the field reaches the screen in seconds, and the right people are notified when something goes off track.",
     },
-    tech: ["Python", "Fields2Cover", "Shapely", "Next.js", "Leaflet"],
+    tech: ["MQTT", "Python", "AWS", "React"],
   },
   {
-    title: { pt: "CI de firmware próprio", en: "Self-hosted firmware CI" },
+    title: { pt: "Mapas e planejamento de campo", en: "Maps and field planning" },
     text: {
-      pt: "Substituiu o AWS CodeBuild: compila 13 firmwares (ESP-IDF, PlatformIO, STM32) com build reproduzível, conferência byte a byte e avisos no Discord.",
-      en: "Replaced AWS CodeBuild: builds 13 firmwares (ESP-IDF, PlatformIO, STM32) with reproducible builds, byte-level checks and Discord notifications.",
+      pt: "Ferramentas para planejar e revisar o trabalho no talhão, que conversam com QGIS e QField.",
+      en: "Tools to plan and review work across a field, compatible with QGIS and QField.",
     },
-    tech: ["Python", "Docker", "systemd", "DynamoDB", "CloudWatch"],
+    tech: ["Python", "Shapely", "GeoJSON", "Leaflet", "QGIS"],
   },
   {
-    title: { pt: "Alertas e comandos pelo WhatsApp", en: "WhatsApp alerts and commands" },
+    title: { pt: "Relatórios automáticos", en: "Automatic reports" },
     text: {
-      pt: "Avisa quando a máquina sai do padrão de velocidade ou pressão, sem mensagens repetidas, e permite pausar e retomar a máquina com confirmação.",
-      en: "Warns when a machine leaves its speed or pressure range, without duplicates, and lets operators pause and resume it with confirmation.",
+      pt: "Mapas, figuras e gráficos gerados na nuvem e entregues prontos, sem trabalho manual.",
+      en: "Maps, figures and charts rendered in the cloud and delivered ready to use, with no manual work.",
     },
-    tech: ["WhatsApp Cloud API", "AWS IoT Core", "Lambda", "DynamoDB"],
+    tech: ["Python", "Matplotlib", "GeoTIFF", "AWS Lambda"],
   },
   {
-    title: { pt: "Custo da nuvem sob controle", en: "Cloud cost under control" },
+    title: { pt: "Entrega contínua e custo sob controle", en: "Continuous delivery, cost under control" },
     text: {
-      pt: "Medi o que pesava na conta AWS e cortei: Lambdas no tamanho certo, telemetria com prazo de retenção, leituras por chave e regras de ciclo de vida no S3.",
-      en: "Measured what drove the AWS bill and cut it: right-sized Lambdas, telemetry with retention, key lookups instead of scans and S3 lifecycle rules.",
+      pt: "Build e implantação automáticos, e decisões de custo tomadas com base em métricas, não em palpite.",
+      en: "Automated build and deploy, and cost decisions based on metrics, not guesses.",
     },
-    tech: ["Cost Explorer", "CloudWatch", "DynamoDB", "S3"],
+    tech: ["Docker", "CI/CD", "CloudWatch", "Cost Explorer"],
   },
 ];
 
@@ -285,8 +281,8 @@ export const education: { title: T; school: string; period: string; text: T }[] 
     school: "Etec Prof. Armando Bayeux da Silva",
     period: "2015 – 2017",
     text: {
-      pt: "Base em eletrônica e circuitos que hoje ajuda no trabalho com firmware e máquinas.",
-      en: "Electronics and circuits background that now helps with firmware and machines.",
+      pt: "Base em eletrônica e circuitos que hoje me ajuda a entender o hardware e as máquinas.",
+      en: "Electronics and circuits background that now helps me understand hardware and machines.",
     },
   },
 ];
