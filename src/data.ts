@@ -33,7 +33,7 @@ export const ui = {
   location: { pt: "São Paulo, Brasil", en: "São Paulo, Brazil" },
   locationLabel: { pt: "Localização", en: "Location" },
   workLabel: { pt: "Modelo de trabalho", en: "Work model" },
-  work: { pt: "Remoto, híbrido ou presencial", en: "Remote, hybrid or on-site" },
+  work: { pt: "Somente remoto", en: "Remote only" },
   langLabel: { pt: "Idiomas", en: "Languages" },
   langs: { pt: "Português (nativo) · Inglês", en: "Portuguese (native) · English" },
   cv: { pt: "Baixar CV (inglês)", en: "Download CV" },
