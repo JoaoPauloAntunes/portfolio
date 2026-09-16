@@ -27,8 +27,8 @@ export const ui = {
   hello: { pt: "Olá, eu sou", en: "Hi, I'm" },
   role: { pt: "Engenheiro de Computação · Desenvolvedor Full Stack", en: "Computer Engineer · Full Stack Developer" },
   about: {
-    pt: "Há mais de 6 anos transformo dados do campo em software útil. Desenvolvo sistemas em nuvem que coletam, processam e mostram dados de máquinas agrícolas, sensores e mapas, e cuido de cada entrega de ponta a ponta: do banco de dados à tela, da primeira versão à operação em produção.",
-    en: "For 6+ years I have been turning field data into useful software. I build cloud systems that collect, process and display data from farm machines, sensors and maps, and I own each delivery end to end: from database to screen, from first version to production.",
+    pt: "Há mais de 6 anos construo software em nuvem para agricultura de precisão. Desenvolvo sistemas que coletam, processam e mostram dados de máquinas agrícolas, planejam rotas de trabalho no campo e avisam as pessoas certas pelo WhatsApp. Cuido de cada entrega de ponta a ponta: dados, API, interface, implantação, monitoramento e custo.",
+    en: "For 6+ years I have been building cloud software for precision agriculture. I build systems that collect, process and display farm machine data, plan field work routes and notify the right people over WhatsApp. I own each delivery end to end: data, API, user interface, deployment, monitoring and cost.",
   },
   location: { pt: "São Paulo, Brasil", en: "São Paulo, Brazil" },
   locationLabel: { pt: "Localização", en: "Location" },
@@ -40,15 +40,15 @@ export const ui = {
   talk: { pt: "Vamos conversar", en: "Let's talk" },
   servicesTitle: { pt: "O que eu faço", en: "What I do" },
   servicesSub: {
-    pt: "Do mapa na tela ao servidor na nuvem, com os pés no campo.",
-    en: "From the map on screen to the cloud server, with my feet in the field.",
+    pt: "Do mapa na tela ao servidor na nuvem — e até o build do firmware da máquina.",
+    en: "From the map on screen to the cloud server — all the way to the machine's firmware build.",
   },
   experienceTitle: { pt: "Experiência", en: "Experience" },
   projectsTitle: { pt: "Projetos", en: "Projects" },
-  projectsWork: { pt: "Problemas que resolvo no trabalho", en: "Problems I solve at work" },
+  projectsWork: { pt: "No trabalho", en: "At work" },
   projectsWorkNote: {
-    pt: "Os detalhes são confidenciais; aqui está o tipo de solução que entrego.",
-    en: "The details are confidential; this is the kind of solution I deliver.",
+    pt: "Código proprietário — descrevo o que construí, sem expor detalhes internos.",
+    en: "Proprietary code — I describe what I built without exposing internal details.",
   },
   projectsPersonal: { pt: "Pessoais", en: "Personal" },
   code: { pt: "Código", en: "Code" },
@@ -68,7 +68,7 @@ export const ui = {
 
 export const stats: { value: string | T; label: T }[] = [
   { value: "6+", label: { pt: "anos de experiência", en: "years of experience" } },
-  { value: "Full stack", label: { pt: "do banco de dados à tela", en: "from database to screen" } },
+  { value: { pt: "1.000+", en: "1,000+" }, label: { pt: "pull requests aceitos", en: "merged pull requests" } },
   { value: "AWS", label: { pt: "arquiteturas sem servidor", en: "serverless architectures" } },
   { value: "GIS", label: { pt: "mapas e dados espaciais", en: "maps and spatial data" } },
 ];
@@ -80,53 +80,53 @@ export const services: { icon: IconName; title: T; text: T; tech: string[] }[] =
     icon: "web",
     title: { pt: "Interfaces web", en: "Web interfaces" },
     text: {
-      pt: "Aplicações responsivas com mapas interativos, painéis e gráficos que ajudam a decidir.",
-      en: "Responsive apps with interactive maps, dashboards and charts that help people decide.",
+      pt: "Aplicações responsivas com mapas interativos, painéis de operação e acompanhamento ao vivo.",
+      en: "Responsive apps with interactive maps, operation dashboards and live tracking.",
     },
     tech: ["Next.js", "React", "TypeScript", "Leaflet", "React Native"],
   },
   {
     icon: "cloud",
-    title: { pt: "Back end e nuvem", en: "Back end & cloud" },
+    title: { pt: "Back end e AWS", en: "Back end & AWS" },
     text: {
-      pt: "APIs sem servidor, bancos NoSQL, login e controle de acesso, e infraestrutura como código.",
-      en: "Serverless APIs, NoSQL databases, authentication and access control, and infrastructure as code.",
+      pt: "APIs sem servidor, modelagem no DynamoDB, login e permissões por perfil, e infraestrutura como código.",
+      en: "Serverless APIs, DynamoDB data modelling, role-based authentication and infrastructure as code.",
     },
-    tech: ["Python", "FastAPI", "AWS Lambda", "DynamoDB", "Cognito", "S3", "AWS CDK"],
+    tech: ["Python", "FastAPI", "Lambda", "API Gateway", "DynamoDB", "Cognito", "S3", "EventBridge", "AWS CDK"],
   },
   {
     icon: "map",
-    title: { pt: "Dados espaciais", en: "Spatial data" },
+    title: { pt: "Mapas e rotas", en: "Maps & routes" },
     text: {
-      pt: "Mapas, planejamento do trabalho em campo, camadas raster e projetos prontos para QGIS e QField.",
-      en: "Maps, field work planning, raster layers and ready-to-use QGIS and QField projects.",
+      pt: "Planejamento de rotas de cobertura em talhões, desvio de obstáculos, camadas raster e exportação para QGIS e QField.",
+      en: "Coverage path planning for crop fields, obstacle avoidance, raster layers and export to QGIS and QField.",
     },
-    tech: ["GeoJSON", "Shapely", "GeoTIFF", "QGIS", "QField"],
+    tech: ["Fields2Cover", "Shapely", "GeoJSON", "GeoTIFF", "QGIS", "QField"],
   },
   {
     icon: "ci",
-    title: { pt: "CI/CD e DevOps", en: "CI/CD & DevOps" },
+    title: { pt: "CI/CD, DevOps e custo", en: "CI/CD, DevOps & cost" },
     text: {
-      pt: "Build, testes e implantação automáticos, com monitoramento e custo de nuvem sob controle.",
-      en: "Automated build, test and deploy, with monitoring and cloud cost under control.",
+      pt: "Montei um servidor próprio de build que substituiu o AWS CodeBuild na compilação de firmware. Implantação automática com reversão, e redução de custo na AWS medida antes e depois.",
+      en: "Built a self-hosted build server that replaced AWS CodeBuild for firmware builds. Automated deploys with rollback, and AWS cost cuts measured before and after.",
     },
-    tech: ["Docker", "Linux", "pytest", "CloudWatch", "GitHub Actions"],
+    tech: ["Docker", "Linux", "systemd", "CodeBuild", "CloudWatch", "Cost Explorer", "pytest"],
   },
   {
     icon: "iot",
-    title: { pt: "IoT e integrações", en: "IoT & integrations" },
+    title: { pt: "IoT e WhatsApp", en: "IoT & WhatsApp" },
     text: {
-      pt: "Dados de máquinas e sensores em tempo real, integração com APIs de terceiros e avisos automáticos.",
-      en: "Real-time machine and sensor data, third-party API integrations and automatic notifications.",
+      pt: "Telemetria de máquinas em tempo real, alertas automáticos e menus de comando pelo WhatsApp.",
+      en: "Real-time machine telemetry, automatic alerts and command menus over WhatsApp.",
     },
-    tech: ["MQTT", "AWS IoT Core", "REST APIs", "Webhooks"],
+    tech: ["AWS IoT Core", "MQTT", "WhatsApp Cloud API", "Webhooks", "ESP-IDF", "PlatformIO"],
   },
   {
     icon: "ai",
     title: { pt: "Desenvolvimento com IA", en: "AI-assisted development" },
     text: {
-      pt: "Uso agentes de IA no dia a dia para entregar mais rápido, sempre revisando e testando o que sai deles.",
-      en: "I use AI agents daily to ship faster, always reviewing and testing what they produce.",
+      pt: "Uso agentes de IA no dia a dia para investigar, programar e revisar mais rápido, sempre conferindo e testando o resultado.",
+      en: "I use AI agents daily to investigate, code and review faster, always checking and testing the result.",
     },
     tech: ["Claude Code", "ChatGPT"],
   },
@@ -139,20 +139,32 @@ export const experience: { role: T; org: string; period: T; points: T[] }[] = [
     period: { pt: "ago 2022 – hoje", en: "Aug 2022 – present" },
     points: [
       {
-        pt: "Sistemas em nuvem para coletar, processar e visualizar dados de máquinas agrícolas, sensores e imagens.",
-        en: "Cloud systems that collect, process and visualise data from farm machines, sensors and imagery.",
+        pt: "Planejamento de rotas de cobertura para máquinas agrícolas, com desvio de obstáculos e exportação para QGIS.",
+        en: "Coverage path planning for farm machines, with obstacle avoidance and QGIS export.",
       },
       {
-        pt: "Mapas, planejamento do trabalho em campo e relatórios gerados automaticamente.",
-        en: "Maps, field work planning and automatically generated reports.",
+        pt: "Operações com várias máquinas e telemetria em tempo real na tela.",
+        en: "Multi-machine operations and real-time telemetry on screen.",
       },
       {
-        pt: "APIs e integrações entre sistemas, inclusive de terceiros.",
-        en: "APIs and integrations between systems, including third-party services.",
+        pt: "Login, grupos de permissão e gestão de usuários no Amazon Cognito.",
+        en: "Authentication, permission groups and user management on Amazon Cognito.",
       },
       {
-        pt: "Controle de acesso, automação de implantação e otimização de custo na nuvem.",
-        en: "Access control, deployment automation and cloud cost optimisation.",
+        pt: "Alertas automáticos e menus de comando pelo WhatsApp (API oficial da Meta).",
+        en: "Automatic alerts and command menus over WhatsApp (Meta Cloud API).",
+      },
+      {
+        pt: "Servidor próprio de CI/CD que substituiu o AWS CodeBuild na compilação de firmware, com avisos no Discord.",
+        en: "Self-hosted CI/CD server that replaced AWS CodeBuild for firmware builds, with Discord notifications.",
+      },
+      {
+        pt: "Redução de custo na AWS: Lambdas no tamanho certo, prazo de retenção de dados, leituras mais baratas e regras de ciclo de vida no S3.",
+        en: "AWS cost reduction: right-sized Lambdas, data retention, cheaper reads and S3 lifecycle rules.",
+      },
+      {
+        pt: "Relatórios de campo gerados na nuvem, com mapas e gráficos.",
+        en: "Cloud-rendered field reports with maps and charts.",
       },
     ],
   },
@@ -194,36 +206,36 @@ export type Project = { title: T; text: T; tech: string[]; code?: string; live?:
 
 export const workProjects: Project[] = [
   {
-    title: { pt: "Máquinas em tempo real", en: "Machines in real time" },
+    title: { pt: "Rotas para máquinas agrícolas", en: "Routes for farm machines" },
     text: {
-      pt: "O que a máquina faz no campo chega à tela em segundos, e quem precisa é avisado quando algo sai do esperado.",
-      en: "What a machine does in the field reaches the screen in seconds, and the right people are notified when something goes off track.",
+      pt: "Rotas de cobertura calculadas sobre o contorno do talhão, com desvio de obstáculos, linha AB, rotas de amostragem e exportação para QGIS.",
+      en: "Coverage routes over field boundaries, with obstacle avoidance, AB lines, sampling routes and QGIS export.",
     },
-    tech: ["MQTT", "Python", "AWS", "React"],
+    tech: ["Python", "Fields2Cover", "Shapely", "Next.js", "Leaflet"],
   },
   {
-    title: { pt: "Mapas e planejamento de campo", en: "Maps and field planning" },
+    title: { pt: "CI/CD próprio no lugar do CodeBuild", en: "Self-hosted CI/CD replacing CodeBuild" },
     text: {
-      pt: "Ferramentas para planejar e revisar o trabalho no talhão, que conversam com QGIS e QField.",
-      en: "Tools to plan and review work across a field, compatible with QGIS and QField.",
+      pt: "Servidor que compila e publica firmware embarcado com build reproduzível, conferência dos binários e avisos no Discord — sem pagar o serviço gerenciado.",
+      en: "Server that builds and publishes embedded firmware with reproducible builds, binary checks and Discord notifications — without paying for the managed service.",
     },
-    tech: ["Python", "Shapely", "GeoJSON", "Leaflet", "QGIS"],
+    tech: ["Python", "Docker", "systemd", "DynamoDB", "CloudWatch"],
   },
   {
-    title: { pt: "Relatórios automáticos", en: "Automatic reports" },
+    title: { pt: "Alertas e comandos pelo WhatsApp", en: "WhatsApp alerts and commands" },
     text: {
-      pt: "Mapas, figuras e gráficos gerados na nuvem e entregues prontos, sem trabalho manual.",
-      en: "Maps, figures and charts rendered in the cloud and delivered ready to use, with no manual work.",
+      pt: "Avisa os responsáveis quando uma máquina sai do esperado, sem mensagens repetidas, e oferece um menu para agir na hora.",
+      en: "Notifies the right people when a machine goes off track, without duplicates, and offers a menu to act right away.",
     },
-    tech: ["Python", "Matplotlib", "GeoTIFF", "AWS Lambda"],
+    tech: ["WhatsApp Cloud API", "AWS IoT Core", "Lambda", "DynamoDB"],
   },
   {
-    title: { pt: "Entrega contínua e custo sob controle", en: "Continuous delivery, cost under control" },
+    title: { pt: "Custo da AWS sob controle", en: "AWS cost under control" },
     text: {
-      pt: "Build e implantação automáticos, e decisões de custo tomadas com base em métricas, não em palpite.",
-      en: "Automated build and deploy, and cost decisions based on metrics, not guesses.",
+      pt: "Medi o que pesava na conta e cortei: Lambdas no tamanho certo, dados com prazo de retenção, leituras por chave no lugar de varreduras e ciclo de vida no S3.",
+      en: "Measured what drove the bill and cut it: right-sized Lambdas, data retention, key lookups instead of scans and S3 lifecycle rules.",
     },
-    tech: ["Docker", "CI/CD", "CloudWatch", "Cost Explorer"],
+    tech: ["Cost Explorer", "CloudWatch", "DynamoDB", "S3", "Lambda"],
   },
 ];
 
