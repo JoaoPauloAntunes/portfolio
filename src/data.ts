@@ -27,8 +27,8 @@ export const ui = {
   hello: { pt: "Olá, eu sou", en: "Hi, I'm" },
   role: { pt: "Engenheiro de Computação · Desenvolvedor Full Stack", en: "Computer Engineer · Full Stack Developer" },
   about: {
-    pt: "Há mais de 6 anos construo software em nuvem para agricultura de precisão. Desenvolvo sistemas que coletam, processam e mostram dados de máquinas agrícolas, planejam rotas de trabalho no campo e avisam as pessoas certas pelo WhatsApp. Cuido de cada entrega de ponta a ponta: dados, API, interface, implantação, monitoramento e custo.",
-    en: "For 6+ years I have been building cloud software for precision agriculture. I build systems that collect, process and display farm machine data, plan field work routes and notify the right people over WhatsApp. I own each delivery end to end: data, API, user interface, deployment, monitoring and cost.",
+    pt: "Há mais de 5 anos transformo dados do campo em software que funciona onde a agricultura acontece. Do mapa na tela ao servidor na nuvem — e até o build do firmware da máquina —, entrego de ponta a ponta, de olho no resultado e no custo.",
+    en: "For more than 5 years I have been turning field data into software that works where farming happens. From the map on screen to the cloud server — all the way to the machine's firmware build — I deliver end to end, with an eye on results and cost.",
   },
   location: { pt: "São Paulo, Brasil", en: "São Paulo, Brazil" },
   locationLabel: { pt: "Localização", en: "Location" },
@@ -40,8 +40,8 @@ export const ui = {
   talk: { pt: "Vamos conversar", en: "Let's talk" },
   servicesTitle: { pt: "O que eu faço", en: "What I do" },
   servicesSub: {
-    pt: "Do mapa na tela ao servidor na nuvem — e até o build do firmware da máquina.",
-    en: "From the map on screen to the cloud server — all the way to the machine's firmware build.",
+    pt: "Um desenvolvedor que resolve o problema inteiro — não só uma camada dele.",
+    en: "A developer who solves the whole problem — not just one layer of it.",
   },
   experienceTitle: { pt: "Experiência", en: "Experience" },
   projectsTitle: { pt: "Projetos", en: "Projects" },
@@ -67,10 +67,10 @@ export const ui = {
 } satisfies Record<string, T | Record<string, T>>;
 
 export const stats: { value: string | T; label: T }[] = [
-  { value: "6+", label: { pt: "anos de experiência", en: "years of experience" } },
+  { value: "5+", label: { pt: "anos construindo para o agro", en: "years building for agriculture" } },
   { value: { pt: "1.000+", en: "1,000+" }, label: { pt: "pull requests aceitos", en: "merged pull requests" } },
-  { value: "AWS", label: { pt: "arquiteturas sem servidor", en: "serverless architectures" } },
-  { value: "GIS", label: { pt: "mapas e dados espaciais", en: "maps and spatial data" } },
+  { value: "10+", label: { pt: "firmwares no CI/CD que criei", en: "firmwares on the CI/CD I built" } },
+  { value: "AWS", label: { pt: "serverless em produção", en: "serverless in production" } },
 ];
 
 export type IconName = "web" | "cloud" | "map" | "ci" | "iot" | "ai";
@@ -78,55 +78,55 @@ export type IconName = "web" | "cloud" | "map" | "ci" | "iot" | "ai";
 export const services: { icon: IconName; title: T; text: T; tech: string[] }[] = [
   {
     icon: "web",
-    title: { pt: "Interfaces web", en: "Web interfaces" },
+    title: { pt: "Interfaces que se entendem de primeira", en: "Interfaces people get at first sight" },
     text: {
-      pt: "Aplicações responsivas com mapas interativos, painéis de operação e acompanhamento ao vivo.",
-      en: "Responsive apps with interactive maps, operation dashboards and live tracking.",
+      pt: "Mapas interativos, painéis de operação e acompanhamento ao vivo — para quem precisa decidir rápido.",
+      en: "Interactive maps, operation dashboards and live tracking — for people who need to decide fast.",
     },
     tech: ["Next.js", "React", "TypeScript", "Leaflet", "React Native"],
   },
   {
     icon: "cloud",
-    title: { pt: "Back end e AWS", en: "Back end & AWS" },
+    title: { pt: "Nuvem que escala e custa pouco", en: "Cloud that scales and costs little" },
     text: {
-      pt: "APIs sem servidor, modelagem no DynamoDB, login e permissões por perfil, e infraestrutura como código.",
-      en: "Serverless APIs, DynamoDB data modelling, role-based authentication and infrastructure as code.",
+      pt: "APIs serverless na AWS que crescem sozinhas e só cobram pelo uso, com login e permissões por perfil.",
+      en: "Serverless APIs on AWS that scale on their own and only bill for use, with role-based sign-in and permissions.",
     },
     tech: ["Python", "FastAPI", "Lambda", "API Gateway", "DynamoDB", "Cognito", "S3", "EventBridge", "AWS CDK"],
   },
   {
     icon: "map",
-    title: { pt: "Mapas e rotas", en: "Maps & routes" },
+    title: { pt: "Rotas calculadas, não desenhadas", en: "Routes computed, not drawn" },
     text: {
-      pt: "Planejamento de rotas de cobertura em talhões, desvio de obstáculos, camadas raster e exportação para QGIS e QField.",
-      en: "Coverage path planning for crop fields, obstacle avoidance, raster layers and export to QGIS and QField.",
+      pt: "Rotas de cobertura geradas automaticamente sobre o talhão, desviando de obstáculos e prontas para o QGIS.",
+      en: "Coverage routes generated automatically over the field, avoiding obstacles and ready for QGIS.",
     },
     tech: ["Fields2Cover", "Shapely", "GeoJSON", "GeoTIFF", "QGIS", "QField"],
   },
   {
     icon: "ci",
-    title: { pt: "CI/CD, DevOps e custo", en: "CI/CD, DevOps & cost" },
+    title: { pt: "CI/CD próprio e conta da AWS menor", en: "Own CI/CD and a smaller AWS bill" },
     text: {
-      pt: "Montei um servidor próprio de build que substituiu o AWS CodeBuild na compilação de firmware. Implantação automática com reversão, e redução de custo na AWS medida antes e depois.",
-      en: "Built a self-hosted build server that replaced AWS CodeBuild for firmware builds. Automated deploys with rollback, and AWS cost cuts measured before and after.",
+      pt: "Criei o servidor de build que substituiu o AWS CodeBuild — mais de 10 firmwares compilados e publicados sem depender do serviço gerenciado. E corto custo com base em métricas, não em palpite.",
+      en: "I built the build server that replaced AWS CodeBuild — 10+ firmwares built and published without depending on a managed service. And I cut cost based on metrics, not guesses.",
     },
     tech: ["Docker", "Linux", "systemd", "CodeBuild", "CloudWatch", "Cost Explorer", "pytest"],
   },
   {
     icon: "iot",
-    title: { pt: "IoT e WhatsApp", en: "IoT & WhatsApp" },
+    title: { pt: "Máquinas que avisam pelo WhatsApp", en: "Machines that text you on WhatsApp" },
     text: {
-      pt: "Telemetria de máquinas em tempo real, alertas automáticos e menus de comando pelo WhatsApp.",
-      en: "Real-time machine telemetry, automatic alerts and command menus over WhatsApp.",
+      pt: "Telemetria em tempo real e integração com o WhatsApp: o alerta chega a quem precisa, com um menu para agir na hora.",
+      en: "Real-time telemetry plus WhatsApp integration: alerts reach the right person, with a menu to act on the spot.",
     },
     tech: ["AWS IoT Core", "MQTT", "WhatsApp Cloud API", "Webhooks", "ESP-IDF", "PlatformIO"],
   },
   {
     icon: "ai",
-    title: { pt: "Desenvolvimento com IA", en: "AI-assisted development" },
+    title: { pt: "Mais velocidade com IA", en: "More speed with AI" },
     text: {
-      pt: "Uso agentes de IA no dia a dia para investigar, programar e revisar mais rápido, sempre conferindo e testando o resultado.",
-      en: "I use AI agents daily to investigate, code and review faster, always checking and testing the result.",
+      pt: "Agentes de IA no dia a dia para entregar mais rápido — sem abrir mão de revisar e testar cada entrega.",
+      en: "AI agents every day to ship faster — without skipping review and testing on every delivery.",
     },
     tech: ["Claude Code", "ChatGPT"],
   },
@@ -139,32 +139,32 @@ export const experience: { role: T; org: string; period: T; points: T[] }[] = [
     period: { pt: "ago 2022 – hoje", en: "Aug 2022 – present" },
     points: [
       {
-        pt: "Planejamento de rotas de cobertura para máquinas agrícolas, com desvio de obstáculos e exportação para QGIS.",
-        en: "Coverage path planning for farm machines, with obstacle avoidance and QGIS export.",
+        pt: "Criei o planejamento automático de rotas de cobertura, com desvio de obstáculos e exportação para QGIS.",
+        en: "Built automatic coverage path planning, with obstacle avoidance and QGIS export.",
       },
       {
-        pt: "Operações com várias máquinas e telemetria em tempo real na tela.",
-        en: "Multi-machine operations and real-time telemetry on screen.",
+        pt: "Coloquei várias máquinas na mesma operação, com telemetria ao vivo na tela.",
+        en: "Put several machines on the same operation, with live telemetry on screen.",
       },
       {
-        pt: "Login, grupos de permissão e gestão de usuários no Amazon Cognito.",
-        en: "Authentication, permission groups and user management on Amazon Cognito.",
+        pt: "Integrei o WhatsApp: alertas certeiros, sem mensagens repetidas, e menus de comando com confirmação.",
+        en: "Integrated WhatsApp: targeted alerts, no duplicates, and command menus with confirmation.",
       },
       {
-        pt: "Alertas automáticos e menus de comando pelo WhatsApp (API oficial da Meta).",
-        en: "Automatic alerts and command menus over WhatsApp (Meta Cloud API).",
+        pt: "Troquei o AWS CodeBuild por um CI/CD próprio que compila e publica mais de 10 firmwares.",
+        en: "Replaced AWS CodeBuild with my own CI/CD, building and publishing 10+ firmwares.",
       },
       {
-        pt: "Servidor próprio de CI/CD que substituiu o AWS CodeBuild na compilação de firmware, com avisos no Discord.",
-        en: "Self-hosted CI/CD server that replaced AWS CodeBuild for firmware builds, with Discord notifications.",
+        pt: "Reduzi a conta da AWS com Lambdas no tamanho certo, retenção de dados, leituras mais baratas e ciclo de vida no S3.",
+        en: "Shrank the AWS bill with right-sized Lambdas, data retention, cheaper reads and S3 lifecycle rules.",
       },
       {
-        pt: "Redução de custo na AWS: Lambdas no tamanho certo, prazo de retenção de dados, leituras mais baratas e regras de ciclo de vida no S3.",
-        en: "AWS cost reduction: right-sized Lambdas, data retention, cheaper reads and S3 lifecycle rules.",
+        pt: "Protegi os sistemas com login e permissões por perfil no Amazon Cognito.",
+        en: "Secured systems with role-based sign-in and permissions on Amazon Cognito.",
       },
       {
-        pt: "Relatórios de campo gerados na nuvem, com mapas e gráficos.",
-        en: "Cloud-rendered field reports with maps and charts.",
+        pt: "Automatizei relatórios de campo com mapas e gráficos, entregues prontos.",
+        en: "Automated field reports with maps and charts, delivered ready to use.",
       },
     ],
   },
@@ -206,34 +206,34 @@ export type Project = { title: T; text: T; tech: string[]; code?: string; live?:
 
 export const workProjects: Project[] = [
   {
-    title: { pt: "Rotas para máquinas agrícolas", en: "Routes for farm machines" },
+    title: { pt: "Rotas que o operador não precisa desenhar", en: "Routes operators don't have to draw" },
     text: {
-      pt: "Rotas de cobertura calculadas sobre o contorno do talhão, com desvio de obstáculos, linha AB, rotas de amostragem e exportação para QGIS.",
-      en: "Coverage routes over field boundaries, with obstacle avoidance, AB lines, sampling routes and QGIS export.",
+      pt: "A rota de cobertura sai pronta do contorno do talhão: desvia de obstáculos, segue a linha AB, inclui pontos de amostragem e vai direto para o QGIS.",
+      en: "The coverage route comes straight from the field boundary: it avoids obstacles, follows the AB line, includes sampling points and goes straight into QGIS.",
     },
     tech: ["Python", "Fields2Cover", "Shapely", "Next.js", "Leaflet"],
   },
   {
-    title: { pt: "CI/CD próprio no lugar do CodeBuild", en: "Self-hosted CI/CD replacing CodeBuild" },
+    title: { pt: "Um CodeBuild só nosso", en: "Our very own CodeBuild" },
     text: {
-      pt: "Servidor que compila e publica firmware embarcado com build reproduzível, conferência dos binários e avisos no Discord — sem pagar o serviço gerenciado.",
-      en: "Server that builds and publishes embedded firmware with reproducible builds, binary checks and Discord notifications — without paying for the managed service.",
+      pt: "Servidor que compila e publica mais de 10 firmwares com build reproduzível e aviso no Discord — o serviço gerenciado virou só plano B.",
+      en: "A server that builds and publishes 10+ firmwares with reproducible builds and Discord notifications — the managed service is now just plan B.",
     },
     tech: ["Python", "Docker", "systemd", "DynamoDB", "CloudWatch"],
   },
   {
-    title: { pt: "Alertas e comandos pelo WhatsApp", en: "WhatsApp alerts and commands" },
+    title: { pt: "A máquina chama no WhatsApp", en: "The machine messages you on WhatsApp" },
     text: {
-      pt: "Avisa os responsáveis quando uma máquina sai do esperado, sem mensagens repetidas, e oferece um menu para agir na hora.",
-      en: "Notifies the right people when a machine goes off track, without duplicates, and offers a menu to act right away.",
+      pt: "Quando algo sai do esperado, o responsável recebe o alerta na hora — uma vez só — e responde por um menu, sem abrir sistema nenhum.",
+      en: "When something goes off track, the right person is alerted right away — just once — and replies through a menu, without opening any system.",
     },
     tech: ["WhatsApp Cloud API", "AWS IoT Core", "Lambda", "DynamoDB"],
   },
   {
-    title: { pt: "Custo da AWS sob controle", en: "AWS cost under control" },
+    title: { pt: "Conta da AWS no regime", en: "AWS bill on a diet" },
     text: {
-      pt: "Medi o que pesava na conta e cortei: Lambdas no tamanho certo, dados com prazo de retenção, leituras por chave no lugar de varreduras e ciclo de vida no S3.",
-      en: "Measured what drove the bill and cut it: right-sized Lambdas, data retention, key lookups instead of scans and S3 lifecycle rules.",
+      pt: "Medi onde o dinheiro ia, cortei o desperdício e provei o resultado com métricas: Lambdas no tamanho certo, retenção de dados, leituras por chave e ciclo de vida no S3.",
+      en: "Measured where the money went, cut the waste and proved the result with metrics: right-sized Lambdas, data retention, key lookups and S3 lifecycle rules.",
     },
     tech: ["Cost Explorer", "CloudWatch", "DynamoDB", "S3", "Lambda"],
   },
