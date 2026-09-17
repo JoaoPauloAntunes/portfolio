@@ -9,6 +9,7 @@ export const profile = {
   name: "João Paulo Antunes",
   avatar: `${base}images/profile.jpg`,
   email: "jpantunesdesouza@gmail.com",
+  whatsapp: "https://wa.me/5519991608670",
   github: "https://github.com/JoaoPauloAntunes",
   linkedin: "https://www.linkedin.com/in/joao-paulo-antunes",
   instagram: "https://www.instagram.com/jpantunes13/",
