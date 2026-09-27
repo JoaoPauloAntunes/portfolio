@@ -8,6 +8,8 @@ Feito com React, Vite, TypeScript e Tailwind CSS. É publicado pelo GitHub Pages
 
 Todos os textos ficam em [`src/data.ts`](src/data.ts), nos dois idiomas. A foto fica em `public/images/profile.jpg`, e o CV em `public/cv/`.
 
+É um PWA (dá para instalar no celular e abre offline): `public/manifest.webmanifest` e `public/sw.js`, registrado em `src/main.tsx` só no build. Ao mudar o `sw.js`, troque a `VERSION` dele.
+
 ```bash
 npm install
 npm run dev      # http://localhost:5173/portfolio/
