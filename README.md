@@ -1,6 +1,6 @@
 # Portfólio — João Paulo Antunes
 
-Site pessoal em português e inglês: **https://joaopauloantunes.github.io/** (a raiz redireciona para `/portfolio/`, onde este repositório é publicado).
+Site pessoal em português e inglês: **https://joaopauloantunes.github.io/** (a raiz é uma página de links, estilo Linktree, que fica na branch `gh-pages` do repositório `JoaoPauloAntunes.github.io`; este repositório é publicado em `/portfolio/`).
 
 Feito com React, Vite, TypeScript e Tailwind CSS. É publicado pelo GitHub Pages a cada push na `main` (`.github/workflows/deploy.yml`).
 
