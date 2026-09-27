@@ -251,6 +251,24 @@ export const personalProjects: Project[] = [
     tech: ["PWA", "TypeScript", "Serverless (Vercel)", "PostgreSQL", "Google OAuth", "Claude API", "Web Push", "Google Sheets"],
   },
   {
+    title: { pt: "MyFilms", en: "MyFilms" },
+    text: {
+      pt: "Catálogo de filmes no estilo Netflix, com busca inteligente por IA (\"tipo Interestelar, só que mais curto\"), trailer, elenco e onde assistir no Brasil. Área pessoal com login Google, instalável como app e 100% em planos gratuitos.",
+      en: "Netflix-style movie catalog with AI-powered search (\"like Interstellar, but shorter\"), trailers, cast and where to stream in Brazil. Personal area with Google sign-in, installable as an app and running entirely on free tiers.",
+    },
+    tech: ["JavaScript", "Cloudflare Workers", "Workers AI", "KV", "TMDB API", "Google OAuth", "PWA"],
+    live: "https://myfilms.jpantunes13.workers.dev/",
+  },
+  {
+    title: { pt: "MyTravels", en: "MyTravels" },
+    text: {
+      pt: "Descubra para onde viajar: melhor época, clima dos 12 meses, custo diário, câmbio, documento necessário e o que ver em cada destino. Busca inteligente por IA (\"praia tranquila e barata em julho\") e nenhuma chave de API de dados.",
+      en: "Find where to travel next: best season, 12-month climate, daily cost, exchange rate, required documents and what to see at each destination. AI-powered search (\"quiet, cheap beach in July\") and no data API keys.",
+    },
+    tech: ["JavaScript", "Cloudflare Workers", "Workers AI", "Wikipedia/Wikidata", "Open-Meteo", "Google OAuth"],
+    live: "https://mytravels.jpantunes13.workers.dev/",
+  },
+  {
     title: { pt: "Transmissão de tela sem fio", en: "Wireless screen casting" },
     text: {
       pt: "Envia a tela do computador para um celular ou navegador, na mesma rede ou pela internet. O celular conecta lendo um QR code.",
